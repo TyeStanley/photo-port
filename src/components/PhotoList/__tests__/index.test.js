@@ -2,7 +2,7 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import PhotoList from '../PhotoList'
+import PhotoList from '../../PhotoList'
 
 afterEach(cleanup)
 
@@ -11,7 +11,7 @@ describe('PhotoList is rendering', () => {
     render(<PhotoList />);
   });
 
-  it('renders', () => {
+  it('matches the snapshot DOM node structure', () => {
     const { asFragment } = render(<PhotoList />)
     expect(asFragment()).toMatchSnapshot()
   });
